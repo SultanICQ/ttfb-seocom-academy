@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^proxy\.php$ - [L]
+RewriteRule . /proxy.php [L]
