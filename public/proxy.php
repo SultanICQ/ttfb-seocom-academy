@@ -33,9 +33,11 @@ function custom_mime_content_type($filename)
         'css' => 'text/css',
         'jpg' => 'image/jpeg',
         'ico' => 'image/vnd.microsoft.icon',
+
     );
 
-    $ext = strtolower(array_pop(explode('.', $filename)));
+    $array = explode('.', $filename);
+    $ext = strtolower(array_pop($array));
     if (array_key_exists($ext, $mime_types)) {
         return $mime_types[$ext];
     } else {
