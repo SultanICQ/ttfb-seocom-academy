@@ -22,3 +22,12 @@ services:
         - .:/application
         - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini
 
+    cache:
+      image: varnish:6.2
+      container_name: ttfb-cache
+      volumes:
+        - ./phpdocker/varnish/default.vcl:/etc/varnish/default.vcl
+      ports:
+        - "8081:80"
+
+
